@@ -21,7 +21,14 @@ public class MorraCinese {      //controller del gioco
         System.out.println("Inserisci il numero dispari di partite che vuoi fare:");
         int partite = -1;
         while ((partite % 2) == 0 || partite < 0) {     //si potrebbe gestire l'eccezione che l'input non sia un intero.
-            partite = t.nextInt();
+            
+            try{
+                partite = t.nextInt();
+            }
+            catch(Exception e){
+                System.out.println("ERRORE");
+                return;
+            }
 
             if ((partite % 2) == 0) {
                 System.out.println("Ho detto dispari!");
@@ -30,7 +37,13 @@ public class MorraCinese {      //controller del gioco
 
         while (mode != 1 && mode != 2) {
             System.out.println("Premi 1 se vuoi giocare contro il PC, 2 se vuoi simulare un match!");
-            mode = t.nextInt();         //gestione eccezione come sopra
+            try{
+                mode = t.nextInt();
+            }
+            catch(Exception e){
+                System.out.println("ERRORE");
+                return;
+            }   
         }
 
         

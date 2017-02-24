@@ -18,7 +18,16 @@ public class Player {
        if(p.getType()==1){
            while(mossa<1 || mossa>3){
                System.out.println("Fai la tua mossa: \n1 - Carta\n2 - Forbice\n3 - Sasso");
-               mossa = t.nextInt(); //gestione eccezione tipo
+               try{
+                   mossa = t.nextInt();
+               }
+               catch(Exception e){
+                   
+                   System.out.println("Punto all'avversario!");
+                   break;
+                   
+               }
+               
            }
            
            
